@@ -1,11 +1,6 @@
 package com.flightinportugal.api;
 
-import com.flightinportugal.dto.DataDTO;
 import com.flightinportugal.dto.FlightDTO;
-import com.flightinportugal.model.BagsAverage;
-import com.flightinportugal.model.FlightAverage;
-import com.flightinportugal.model.RequestEntity;
-import com.flightinportugal.model.RequestEntityRepository;
 import com.flightinportugal.model.ResponseHandler;
 import com.flightinportugal.service.RequestEntityService;
 import com.google.gson.Gson;
@@ -15,7 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.*;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import javax.validation.Valid;
@@ -24,7 +22,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 @RestController
 @RequestMapping(path = "/flight/", produces = "application/json")
