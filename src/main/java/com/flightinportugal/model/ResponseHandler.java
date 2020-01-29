@@ -31,7 +31,7 @@ public class ResponseHandler {
 
     public double getPriceAverageForTwoBagagges() {
         return data.stream()
-                .mapToDouble(d -> d.getBagPrice().getPriceForTwoBaggages())
+                .mapToDouble(d -> d.getBagPrice().getPriceForTwoBaggage())
                 .average()
                 .orElse(Double.NaN);
     }
