@@ -78,7 +78,7 @@ class ResponseHandlerTest {
         flight1.setPrice(40);
 
         ResponseHandler responseHandler = new ResponseHandler(Collections.singletonList(flight1));
-        String expectedUrl = "{\"priceAverage\":\"40\",\"bagsAverage\":{\"oneBagagge\":\"10\",\"twoBaggage\":\"17\"},\"dateFrom\":\"01/01/2020\",\"sourceAirport\":\"OPO\",\"targetAirport\":\"LIS\",\"partner\":\"TAP\",\"currency\":\"EUR\"}";
+        String expectedUrl = "{\"priceAverage\":\"40\",\"bagsAverage\":{\"oneBaggage\":\"10\",\"twoBaggage\":\"17\"},\"dateFrom\":\"01/01/2020\",\"sourceAirport\":\"OPO\",\"targetAirport\":\"LIS\",\"partner\":\"TAP\",\"currency\":\"EUR\"}";
         Assertions.assertThat(expectedUrl).isEqualTo(responseHandler.buildResponse(apiURL));
     }
 }
