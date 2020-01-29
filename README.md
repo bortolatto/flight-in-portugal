@@ -69,7 +69,7 @@ The second approach is to run through a maven wrapper with the following command
 ./mvnw spring-boot:run
 ```
 
-#Additional endpoints
+# Additional endpoints
 The API provides two additional endpoints:
 * /all-requests: shows the historic of all requests
 * /erase: remove the entire history of the requests
