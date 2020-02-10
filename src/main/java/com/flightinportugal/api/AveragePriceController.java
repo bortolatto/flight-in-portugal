@@ -7,6 +7,7 @@ import com.google.gson.Gson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.*;
 import org.springframework.validation.annotation.Validated;
@@ -32,6 +33,7 @@ public class AveragePriceController {
     private RequestEntityService service;
 
     @GetMapping("/avg")
+    @Cacheable("avg")
     public String getAverage(@RequestParam @Pattern(regexp = "RYR|TAP") String partner,
                       @Valid @RequestParam(name = "date_from") @DateTimeFormat(pattern = "dd/MM/yyyy") LocalDate dateFrom,
                       @RequestParam(name = "date_to", required = false) @DateTimeFormat(pattern = "dd/MM/yyyy") LocalDate dateTo,
